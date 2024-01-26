@@ -1,0 +1,38 @@
+<table border="1">
+  <thead>
+    <tr>
+      <th>NAME</th>
+      <th>TYPE</th>
+      <th>DESC</th>
+      <th>ACTION</th>
+    </tr>
+  </thead>
+
+  <tr *ngFor="let item of ingredientList.getValue(); index as i;">
+    <th>{{item.name}}</th>
+    <th>{{item.type}}</th>
+    <th>{{item.description}}</th>
+    <th><button (click)="deleteIngredient(item)">DEL</button></th>
+  </tr>
+</table>
+
+<br><br><br><br>
+
+
+<table border="1">
+  <ul>
+    <li>
+      <h5>Create Ingredient Name: </h5>
+      <input type="text" [(ngModel)]="createName">
+    </li>
+    <li>
+      <h5>Create Ingredient Type: </h5>
+      <input type="text" [(ngModel)]="createType">
+    </li>
+    <li>
+      <h5>Create Ingredient Desc: </h5>
+      <input type="text" [(ngModel)]="createDesc">
+    </li>
+    <button (click)="createIngredient()">CONFIRM CREATE</button>
+  </ul>
+</table>
